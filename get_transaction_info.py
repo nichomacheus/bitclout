@@ -23,7 +23,6 @@ def transaction_info_search(
     return {"total_transactions": len(transactions), "per_type_stats": stats}
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Get transaction stats for some public key"
@@ -31,7 +30,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--public_key", type=str, help="public key you want to look up", required=True
     )
-    parser.add_argument("--is_mempool")
+    parser.add_argument("--is_mempool", action='store_true')
     args = parser.parse_args()
     print(
         json.dumps(
